@@ -26,3 +26,7 @@ npm install
 
 3) To run the project
 node .
+
+
+***********************************
+Email me on shyanongit@gmail.com if you have any  query about loopback framework
