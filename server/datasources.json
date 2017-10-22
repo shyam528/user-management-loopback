@@ -1,0 +1,28 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 3306,
+    "database": "YOUR_DATABASE_NAME",
+    "password": "YOUR_DATABASE_PASSWORD",
+    "name": "db",
+    "connector": "mysql",
+    "user": "YOUR_DATABASE_USERNAME"
+  },
+  "email": {
+    "name": "email",
+    "defaultForType": "mail",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "SMTP",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "auth": {
+          "user": "YOUR_EMAIL",
+          "pass": "YOUR_PASSWORD"
+        }
+      }
+    ]
+  }
+}

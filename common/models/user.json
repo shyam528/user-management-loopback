@@ -1,0 +1,95 @@
+{
+  "name": "user",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true,
+      "generated": true
+    },
+    "unique_id": {
+      "type": "string",
+      "required": true,
+      "defaultFn": "uuid"
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "gender": {
+      "type": "string",
+      "required": true
+    },
+    "bloodgroup": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "registrationId": {
+      "type": "string",
+      "required": false
+    },
+    "loginStatus": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "suggestion": {
+      "type": "hasMany",
+      "model": "suggestion",
+      "foreignKey": "id"
+    },
+    "corruption": {
+      "type": "hasMany",
+      "model": "corruption",
+      "foreignKey": "id"
+    },
+    "feedback": {
+      "type": "hasMany",
+      "model": "feedback",
+      "foreignKey": "id"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property":"changeUserPassword"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}
