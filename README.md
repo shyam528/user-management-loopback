@@ -29,4 +29,4 @@ node .
 
 
 ***********************************
-Email me on shyanongit@gmail.com if you have any  query about loopback framework
+Email me on shyamongit@gmail.com if you have any  query about loopback framework
